@@ -12,6 +12,8 @@ wasm-bindgen-futures = "0.4"
 js-sys = "0.3"
 sm4-gcm = "0.1.2"
 hex = "0.4"
+rand = "0.8"
+getrandom = { version = "0.2", features = ["js"] }
 
 [dev-dependencies]
 wasm-bindgen-test = "0.3.45"

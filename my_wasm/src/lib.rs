@@ -1,4 +1,5 @@
 use hex::FromHex;
+use rand::Rng;
 use sm4_gcm::*;
 use wasm_bindgen::prelude::*;
 
@@ -9,6 +10,20 @@ extern "C" {
 
 pub fn greet(name: &str) {
     alert(&format!("Hello, {}!", name));
+}
+
+#[wasm_bindgen]
+pub fn generate_key() -> String {
+    let mut rng = rand::thread_rng();
+    let key: [u8; 16] = rng.gen();
+    hex::encode(key)
+}
+
+#[wasm_bindgen]
+pub fn generate_nonce() -> String {
+    let mut rng = rand::thread_rng();
+    let nonce: [u8; 12] = rng.gen();
+    hex::encode(nonce)
 }
 
 #[wasm_bindgen]
