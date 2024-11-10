@@ -1,0 +1,17 @@
+[package]
+name = "my_wasm"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+wasm-bindgen = "0.2"
+wasm-bindgen-futures = "0.4"
+js-sys = "0.3"
+sm4-gcm = "0.1.2"
+hex = "0.4"
+
+[dev-dependencies]
+wasm-bindgen-test = "0.3.45"
